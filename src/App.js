@@ -1,24 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Navigation from './components/Navigation';
+import Overview from './components/Overview';
+import RateBox from './components/RateBox';
 import './App.css';
+import StateOverview from './components/StateOverview';
 
-function App() {
+
+const App = () => {
+
+  const [state, setState] = useState({
+    selectedStateId: ""
+  })
+
+  const handleChange = (e) => {
+
+    const stateId = e.target.value;
+
+    setState({selectedStateId: stateId})
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />
+      <div className="main-container main">
+        <div className="select-div">
+          <label>Select state</label>
+          <select className="custom-select" onChange={handleChange}>
+            <option value="">General</option>
+            <option value="lagos">Lagos</option>
+            <option value="lagos">Lagos</option>
+          </select>
+        </div>
+        <div className="data">
+          {(state.selectedStateId ? <StateOverview /> : <Overview />  )} 
+        </div>
+        <div>
+          <div className="ratings">
+            <div>
+              <RateBox
+                displayText="Fatality Rate"
+                percent={20}
+                color="red"
+              />
+            </div>
+            <div>
+              <RateBox
+                displayText="Recovery Rate"
+                percent={82}
+                color="blue"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

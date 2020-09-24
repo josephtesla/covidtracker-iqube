@@ -1,0 +1,58 @@
+.overview-main {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.overview-values {
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+
+}
+
+.overview-values-single {
+  flex-basis: 30%;
+  min-width: 289px;
+  text-align: center;
+  border: 1px solid grey;
+  margin: 10px;
+  padding: 30px;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+
+.overview-values-single:hover {
+  transform: scale(1.05);
+}
+
+.overview-values-single span {
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.overview-values-single p {
+  margin-top: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+
+@media only screen and (max-width: 768px){
+
+
+}
+
+@media only screen and (max-width: 320px){
+
+}
