@@ -5,8 +5,8 @@ const RatingChart = ({ percent, color}) => {
 
   const data = {
     labels: [
-      'Red',
-      'Grey',
+      '',
+      'Portion',
     ],
     datasets: [{
       data: [100 - percent, percent],

@@ -64,20 +64,20 @@ const App = ({ fetchCovidData, covidData, loading, error }) => {
                 <div>
                   <RateBox
                     displayText="Fatality Rate"
-                    percent={20}
+                    percent={(covidData.data.death / covidData.data.totalConfirmedCases) * 100}
                     color="red"
                   />
                 </div>
                 <div>
                   <RateBox
                     displayText="Recovery Rate"
-                    percent={82}
+                    percent={(covidData.data.discharged / covidData.data.totalConfirmedCases) * 100}
                     color="blue"
                   />
                 </div>
               </div>
             </div>
-          </div> : <h3>LOADING DATA...</h3>}
+          </div> : <h3>LOADING DATA... PLEASE WAIT</h3>}
       </div>
     </div>
   );
